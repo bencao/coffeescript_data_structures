@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Test for Tank</title>
+  <link rel="stylesheet" href="lib/qunit-v1.11.0.css">
+  <script type='text/javascript' src="lib/qunit-v1.11.0.js"></script>
+  <script type="text/javascript" src="lib/coffeescript-v1.6.2.min.js"></script>
+  <script type='text/javascript' src='lib/jquery-v1.9.1.min.js'></script>
+  <script type="text/coffeescript">
+    scriptsToTest = [
+      "../binomial_heap.coffee"
+    ]
+    tests = ["test.coffee"]
+    loadCoffee = (files) ->
+      $head = $("head")
+      compile_and_add = (content) ->
+        compiled = CoffeeScript.compile content, {bare: on}
+        $("<script />").attr("type", "text/javascript").html(compiled).appendTo $head
+      load = (file) ->
+        $.ajax {
+          url: file,
+          success: compile_and_add,
+          dataType: 'text'
+          async: false
+        }
+      load file for file in files
+    loadCoffee scriptsToTest
+    loadCoffee tests
+  </script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</body>
+</html>

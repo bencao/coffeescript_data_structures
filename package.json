@@ -1,0 +1,30 @@
+{
+  "name": "coffeescript_data_structures",
+  "version": "0.0.1",
+  "description": "data structures implementation in coffeescript",
+  "main": "test/index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/grunt-cli/bin/grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:bencao/coffeescript_data_structures.git"
+  },
+  "keywords": [
+    "coffeescript",
+    "data structure",
+    "binomial heap"
+  ],
+  "author": "Ben Cao",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.7",
+    "grunt-coffeelint": "~0.0.6",
+    "grunt-contrib-qunit": "~0.2.1"
+  }
+}
