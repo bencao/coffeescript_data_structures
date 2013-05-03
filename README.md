@@ -7,8 +7,11 @@ data structures coffee script implementation, currently contains binomial heap
 
 ### Usage
 ```coffeescript
-# API
-# new BinomialHeapNode(satellite_data, key)
+# Node API
+# new BinomialHeapNode(satellite, key)
+# node.satellite # get satellite data
+
+# Heap API
 # new BinomialHeap(head_node=null)
 # heap.insert(node)
 # heap.delete(node)
@@ -25,9 +28,10 @@ node3 = new BinomialHeapNode({}, 123)
 heap.insert(node3)
 node4 = new BinomialHeapNode({}, -5)
 heap.insert(node4)
-node5 = new BinomialHeapNode({}, -65535)
+node5 = new BinomialHeapNode("hello world", -65535)
 
-heap.extract_min() # return node5
+return_node = heap.extract_min() # return node5
+return_node.satellite # should == "hello world"
 heap.extract_min() # return node4
 heap.decrease_key(node2, 0) # node2 now has key 0
 heap.extract_min() # should == node2 because node2 now has key 0
